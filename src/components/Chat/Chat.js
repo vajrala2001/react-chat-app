@@ -1,7 +1,7 @@
 import React , {useState,useEffect} from 'react'
 import queryString from 'query-string'
 import io from 'socket.io-client'
-
+import Grid from '@material-ui/core/Grid'
 import TextContainer from '../TextContainer/TextContainer';
 import InfoBar from '../InfoBar/InfoBar'
 import Input from '../Input/Input'
@@ -51,14 +51,20 @@ const Chat = ({location}) => {
     }
     return(
         <div className="outerContainer">
-            <div className="container">
-                <InfoBar room={room}/>
-                <Messages messages = {messages} name = {name}/>
-                <Input message = {message} setMessage = {setMessage} sendMessage = {sendMessage}/>
-            </div>
-            <div className="container1">
-                <TextContainer users={users}/>
-            </div>
+            <Grid container spacing = {0} justify = "center">
+                <Grid item xs = {12} md = {6}>
+                    <div className="container">
+                        <InfoBar room={room}/>
+                        <Messages messages = {messages} name = {name}/>
+                        <Input message = {message} setMessage = {setMessage} sendMessage = {sendMessage}/>
+                    </div>
+                </Grid>
+                <Grid item xs = {12} md = {6}>
+                    <div className="container1">
+                        <TextContainer users={users}/>
+                    </div>
+                </Grid>
+            </Grid>     
         </div>
     )
 }
