@@ -55,9 +55,7 @@ const Chat = ({location}) => {
                 <Messages messages = {messages} name = {name}/>
                 <Input message = {message} setMessage = {setMessage} sendMessage = {sendMessage}/>
             </div>
-            <div className="container1">
-                <TextContainer users={users}/>
-            </div>           
+            <TextContainer users={users}/>          
         </div>
     )
 }
